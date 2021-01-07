@@ -22,9 +22,11 @@ var typed = new Typed(".typed_title", {
      * @property {string} stringsElement ID of element containing string children
      */
     strings: [
-        "Ana^60lyst.^400",
-        "Perf^60or^60mer.^400",
-        "Soft^60ware^100 Developer.^3000",
+
+        "Ana^60lyt^60ical^400",
+        "Per^60for^60mer^400",
+        "Prob^60lem Sol^60ver^400",
+        "Soft^60ware^100 Developer^3000",
     ],
     stringsElement: null,
 
