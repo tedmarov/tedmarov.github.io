@@ -1865,6 +1865,8 @@ article:last-child {
 .image.avatar48 img {
   width: 140px;
   height: 150px;
+  padding: 10px;
+  margin: 10px;
 }
 
 .image.fit {
