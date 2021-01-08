@@ -1912,13 +1912,24 @@ ol li {
 /* Icons */
 
 .techIcon {
-  margin: 1 1 1 1;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: minmax(100px, auto);
 }
 
-#react, #js, #html5, #css3,
-#database, #linux, #ubuntu, #windows{
-  display: inline-table;
-  margin: 1em 1em 1em 1em;
+#react, 
+#js, 
+#html5, 
+#css3,
+#database, 
+#linux, 
+#ubuntu, 
+#windows,
+#excel, 
+#python
+{
+  align-items: center;
+  margin: 1em .5em 1em .5em;
   border: none;
 }
 
@@ -2329,7 +2340,6 @@ button:active,
 
 #footer .copyright li {
   display: inline-block;
-  line-height: 1em;
   border-left: solid 1px rgba(128, 128, 128, 0.35);
   padding: 0 0 0 0.5em;
   margin: 0 0 0 0.5em;
@@ -2393,8 +2403,7 @@ button:active,
 #main > section.one {
   background-color: #81918e;
   background-image: url("../../images/MJSCropped1.jpg");
-  background-position: left;
-  background-attachment: fixed;
+background-size: cover;
   width: 100%;
 }
 
@@ -2485,7 +2494,7 @@ button:active,
       padding: 0 2em 0 2em;
     }
   }
-}
+
   /* Icons */
 
   ul.icons li a {
