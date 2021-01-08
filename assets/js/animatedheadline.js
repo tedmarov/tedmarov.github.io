@@ -25,8 +25,9 @@ var typed = new Typed(".typed_title", {
 
         "Ana^60lyt^60ical^400",
         "Prob^60lem Sol^60ving^400",
+        "Mul^60ti^60lin^60gual^400",
         "Per^60for^60mer^400",
-        "Soft^60ware^100 Developer^3000",
+        "Soft^60ware^100 Developer^3000.",
     ],
     stringsElement: null,
 
