@@ -1,3 +1,5 @@
+![DarkPaladin](./assets/css/images/DarkPaladin1.jpg)
+
 https://tedmarov.github.io
 
 MIT License
