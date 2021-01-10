@@ -1915,6 +1915,8 @@ ol li {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-auto-rows: minmax(100px, auto);
+  font-size: .5rem;
+  width: 100%;
 }
 
 #react, 
@@ -1927,10 +1929,11 @@ ol li {
 #windows,
 #excel, 
 #python,
-#github
+#github,
+#json,
+#sass
 {
   align-items: center;
-  margin: 1em .5em 1em .5em;
   border: none;
 }
 
@@ -2764,7 +2767,7 @@ background-size: cover;
   input,
   textarea,
   select {
-    font-size: 14pt;
+    font-size: 16pt;
   }
 
   h2 {
