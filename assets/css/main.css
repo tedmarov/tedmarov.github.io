@@ -355,8 +355,6 @@ br.clear {
 }
 
 @media screen and (max-width: 960px) {
-  .image.avatar48 {
-  }
 
   .container {
     width: 100%;
@@ -2549,7 +2547,7 @@ background-size: cover;
   #main {
     margin-left: 20%;
   }
-}
+
 
 /* Narrower */
 
