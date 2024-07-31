@@ -2326,6 +2326,7 @@ button:active,
 #footer {
   background-image: url("../css/images/MJSCropped3.jpg");
   background-position: bottom;
+  background-attachment: fixed;
   background-size: cover;
   margin-left: 375px;
   text-align: center;
