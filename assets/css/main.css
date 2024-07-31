@@ -2413,7 +2413,7 @@ background-size: cover;
 #main > section.two {
   background-color: #f5fafa;
   background-image: url("../css/images/MJSCropped3.jpg");
-  background-position: center center;
+  /* background-position: center center; */
   background-attachment: fixed;
   width: 100%;
 }
