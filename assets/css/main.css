@@ -1867,6 +1867,36 @@ article:last-child {
   width: 100%;
 }
 
+#portfolio .portfolio-preview {
+  aspect-ratio: 1;
+  display: grid;
+  width: min(100%, 16rem);
+  margin-inline: auto;
+  place-items: center;
+}
+
+#portfolio .portfolio-preview img,
+#portfolio .portfolio-preview dotlottie-player {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: scale(var(--preview-scale, 1));
+}
+
+#portfolio .portfolio-preview--holiday-road {
+  --preview-scale: 1.4;
+}
+
+#portfolio .portfolio-preview--the-game {
+  --preview-scale: 0.9;
+}
+
+@media screen and (max-width: 360px) {
+  #portfolio .portfolio-preview--holiday-road {
+    --preview-scale: 1.15;
+  }
+}
+
 .image.featured {
   display: block;
   margin: 0 0 2em 0;
