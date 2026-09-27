@@ -11,8 +11,31 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta property='og:image' content='./assets/css/images/DarkPaladin1.jpg' />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/theme-dark.css" />
+		<script>
+			// Set theme before first paint to avoid a flash of the wrong palette.
+			(function () {
+				var t;
+				try { t = localStorage.getItem('tm-theme'); } catch (e) {}
+				if (t !== 'light' && t !== 'dark') {
+					t = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+				}
+				document.documentElement.setAttribute('data-theme', t);
+			})();
+		</script>
 	</head>
 	<body class="is-preload">
+
+		<!-- Gamma filter used to deepen low-contrast logo art -->
+		<svg class="tm-filters" aria-hidden="true" focusable="false">
+			<filter id="tm-deepen" color-interpolation-filters="sRGB">
+				<feComponentTransfer>
+					<feFuncR type="gamma" exponent="2.6" />
+					<feFuncG type="gamma" exponent="2.6" />
+					<feFuncB type="gamma" exponent="2.6" />
+				</feComponentTransfer>
+			</filter>
+		</svg>
 
 		<!-- Header -->
 			<div id="header">
@@ -317,6 +340,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/theme-toggle.js"></script>
 			
 		</body>
 </html>
