@@ -431,6 +431,38 @@ article {
 
 /* Image */
 
+#portfolio {
+  .portfolio-preview {
+    aspect-ratio: 1;
+    display: grid;
+    width: min(100%, 16rem);
+    margin-inline: auto;
+    place-items: center;
+
+    img,
+    dotlottie-player {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transform: scale(var(--preview-scale, 1));
+    }
+  }
+
+  .portfolio-preview--holiday-road {
+    --preview-scale: 1.4;
+  }
+
+  .portfolio-preview--the-game {
+    --preview-scale: 0.9;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  #portfolio .portfolio-preview--holiday-road {
+    --preview-scale: 1.15;
+  }
+}
+
 .image {
   display: inline-block;
   border: 0;
