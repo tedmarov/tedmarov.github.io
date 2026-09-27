@@ -1,8 +1,4 @@
-/*
-	theme-toggle.js — PREVIEW ONLY.
-	Injects a light/dark toggle into the sidebar next to the social icons,
-	so no changes to index.html markup are required.
-*/
+/* Adds the light/dark toggle beside the header social links. */
 (function () {
 	"use strict";
 
