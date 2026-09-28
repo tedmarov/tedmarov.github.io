@@ -658,22 +658,6 @@ button:hover,
 	filter: saturate(0.78);
 }
 
-.hero-portrait figcaption {
-	display: flex;
-	align-items: center;
-	gap: 0.65rem;
-	margin-top: 1rem;
-	color: var(--text-dim);
-	font-size: 0.78rem;
-}
-
-.portrait-mark {
-	width: 0.55rem;
-	height: 0.55rem;
-	border-radius: 50%;
-	background: var(--accent);
-}
-
 .section-heading {
 	max-width: 700px;
 	margin: 0 auto 3rem;
