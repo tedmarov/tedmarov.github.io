@@ -28,14 +28,18 @@
 	--shadow-photo: 0 12px 32px rgba(0, 0, 0, 0.45);
 
 	--thumb-filter: saturate(0.9) brightness(0.92);
+	--background-wash-top: 74%;
+	--background-wash-mid: 82%;
+	--background-wash-bottom: 88%;
+	--header-image-wash: 78%;
 
 	color-scheme: dark;
 }
 
 :root[data-theme="light"] {
 	/* Base sits a shade below white so white cards read as raised. */
-	--bg-base: #eef1eb;
-	--bg-raise: #f8f9f5;
+	--bg-base: #e6e9e3;
+	--bg-raise: #f1f3ed;
 	--surface: rgba(15, 23, 42, 0.05);
 	--card-bg: #ffffff;
 	--well: #eef2f8;
@@ -61,6 +65,10 @@
 
 	/* contrast() would push these pale tones further toward white. */
 	--thumb-filter: saturate(1.08);
+	--background-wash-top: 62%;
+	--background-wash-mid: 68%;
+	--background-wash-bottom: 74%;
+	--header-image-wash: 68%;
 
 	color-scheme: light;
 }
@@ -82,7 +90,15 @@ body::before {
 	position: fixed;
 	inset: 0;
 	z-index: -2;
-	background: linear-gradient(180deg, var(--bg-base) 0%, var(--bg-raise) 55%, var(--bg-base) 100%);
+	background:
+		linear-gradient(
+			180deg,
+			color-mix(in srgb, var(--bg-base) var(--background-wash-top), transparent) 0%,
+			color-mix(in srgb, var(--bg-base) var(--background-wash-mid), transparent) 48%,
+			color-mix(in srgb, var(--bg-base) var(--background-wash-bottom), transparent) 100%
+		),
+		url("../images/DarkPaladin1.jpg") center 34% / cover no-repeat,
+		linear-gradient(180deg, var(--bg-base) 0%, var(--bg-raise) 55%, var(--bg-base) 100%);
 }
 
 body::after {
@@ -155,6 +171,18 @@ body::after {
 	box-shadow: none;
 	color: var(--text);
 	backdrop-filter: blur(16px);
+}
+
+:root[data-theme="light"] #header {
+	background-image:
+		linear-gradient(
+			color-mix(in srgb, var(--bg-base) var(--header-image-wash), transparent),
+			color-mix(in srgb, var(--bg-base) var(--header-image-wash), transparent)
+		),
+		url("../images/DarkPaladin1.jpg");
+	background-position: center, center 38%;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 #header .brand-name {
@@ -341,10 +369,12 @@ body::after {
 	background: #ffffff;
 }
 
-/* Pale tan on off-white. Gamma darkens the light tones while leaving true
-   white untouched, which contrast()/brightness() cannot do. */
-#portfolio .portfolio-preview > img[src*="WikishmediA"] {
-	filter: url(#tm-deepen) saturate(1.35);
+/* Deepen the pale logo tones in the current project-image markup. */
+:root[data-theme="light"] #portfolio .project-image > img[src*="WikishmediA"] {
+		filter: url(#tm-deepen) contrast(1.25) saturate(1.35);
+	background: #ffffff;
+	border: 1px solid var(--well-border);
+	border-radius: 6px;
 }
 
 .tm-filters {
@@ -406,6 +436,19 @@ button:hover,
 	background-color: #1cacff;
 	color: #08121a !important;
 	box-shadow: 0 6px 20px rgba(28, 172, 255, 0.30);
+}
+
+:root[data-theme="light"] #main > section.one .button {
+	background-color: var(--accent);
+	border-color: var(--accent);
+	color: var(--accent-contrast) !important;
+}
+
+:root[data-theme="light"] #main > section.one .button:hover {
+	background-color: var(--text-bright);
+	border-color: var(--text-bright);
+	color: var(--bg-base) !important;
+	box-shadow: var(--shadow-card-hover);
 }
 
 .portfolio,
@@ -653,25 +696,10 @@ button:hover,
 	width: 100%;
 	height: clamp(210px, 20vw, 293px);
 	object-fit: cover;
-	object-position: 25% 50%;
+	object-position: 0% 50%;
 	border-radius: 12px;
+	clip-path: inset(0 6% 0 0 round 12px);
 	filter: saturate(0.78);
-}
-
-.hero-portrait figcaption {
-	display: flex;
-	align-items: center;
-	gap: 0.65rem;
-	margin-top: 1rem;
-	color: var(--text-dim);
-	font-size: 0.78rem;
-}
-
-.portrait-mark {
-	width: 0.55rem;
-	height: 0.55rem;
-	border-radius: 50%;
-	background: var(--accent);
 }
 
 .section-heading {
