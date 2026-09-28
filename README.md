@@ -8,7 +8,6 @@ A responsive, single-page portfolio for Ted Marov, presenting a generalist appro
 
 - Responsive layout with in-page navigation for Work, About, and Toolkit.
 - Light and dark themes, with the first visit following the system preference and manual choices saved in local storage.
-- DarkPaladin1 artwork layered into the page background and used for the social preview image.
 - Separate foreground portrait and project imagery.
 
 ## Technology
