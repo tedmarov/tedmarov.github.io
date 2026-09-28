@@ -97,7 +97,7 @@ body::before {
 			color-mix(in srgb, var(--bg-base) var(--background-wash-mid), transparent) 48%,
 			color-mix(in srgb, var(--bg-base) var(--background-wash-bottom), transparent) 100%
 		),
-		url("./images/DarkPaladin1.jpg") center 34% / cover no-repeat,
+		url("../images/DarkPaladin1.jpg") center 34% / cover no-repeat,
 		linear-gradient(180deg, var(--bg-base) 0%, var(--bg-raise) 55%, var(--bg-base) 100%);
 }
 
@@ -179,7 +179,7 @@ body::after {
 			color-mix(in srgb, var(--bg-base) var(--header-image-wash), transparent),
 			color-mix(in srgb, var(--bg-base) var(--header-image-wash), transparent)
 		),
-		url("./images/DarkPaladin1.jpg");
+		url("../images/DarkPaladin1.jpg");
 	background-position: center, center 38%;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -369,10 +369,12 @@ body::after {
 	background: #ffffff;
 }
 
-/* Pale tan on off-white. Gamma darkens the light tones while leaving true
-   white untouched, which contrast()/brightness() cannot do. */
-#portfolio .portfolio-preview > img[src*="WikishmediA"] {
-	filter: url(#tm-deepen) saturate(1.35);
+/* Deepen the pale logo tones in the current project-image markup. */
+:root[data-theme="light"] #portfolio .project-image > img[src*="WikishmediA"] {
+		filter: url(#tm-deepen) contrast(1.25) saturate(1.35);
+	background: #ffffff;
+	border: 1px solid var(--well-border);
+	border-radius: 6px;
 }
 
 .tm-filters {
@@ -694,8 +696,9 @@ button:hover,
 	width: 100%;
 	height: clamp(210px, 20vw, 293px);
 	object-fit: cover;
-	object-position: 25% 50%;
+	object-position: 0% 50%;
 	border-radius: 12px;
+	clip-path: inset(0 6% 0 0 round 12px);
 	filter: saturate(0.78);
 }
 
