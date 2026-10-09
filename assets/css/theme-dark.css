@@ -174,15 +174,8 @@ body::after {
 }
 
 :root[data-theme="light"] #header {
-	background-image:
-		linear-gradient(
-			color-mix(in srgb, var(--bg-base) var(--header-image-wash), transparent),
-			color-mix(in srgb, var(--bg-base) var(--header-image-wash), transparent)
-		),
-		url("../images/DarkPaladin1.jpg");
-	background-position: center, center 38%;
-	background-size: cover;
-	background-repeat: no-repeat;
+	background: #ffffff;
+	background-image: none;
 }
 
 #header .brand-name {
